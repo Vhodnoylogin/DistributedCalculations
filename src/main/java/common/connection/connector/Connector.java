@@ -1,6 +1,6 @@
-package common.connection.channel;
+package common.connection.connector;
 
-import common.connection.channel.message.MessageContainer;
+import common.connection.message.MessageContainer;
 import common.help.Builder;
 
 import java.io.IOException;
@@ -8,10 +8,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 
-public abstract class Connector {
+public abstract class Connector implements IConnector {
     protected BlockingQueue<MessageContainer> queueRead;
     protected BlockingQueue<MessageContainer> queueWrite;
-
 
     public void start(ExecutorService executor) {
         executor.execute(this::sendWrite);

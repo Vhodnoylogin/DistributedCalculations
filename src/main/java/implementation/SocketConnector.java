@@ -1,17 +1,19 @@
 package implementation;
 
-import common.connection.channel.Connector;
-import common.connection.channel.message.MessageContainer;
+import common.connection.connector.Connector;
+import common.connection.message.MessageContainer;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.Socket;
 
 public class SocketConnector extends Connector {
     protected InputStream in;
     protected OutputStream out;
 
-    protected BufferedReader reader;
-    protected BufferedWriter writer;
+//    protected BufferedReader reader;
+//    protected BufferedWriter writer;
 
     public static SocketConnectorBuilder builder() {
         return new SocketConnectorBuilder();
@@ -49,8 +51,8 @@ public class SocketConnector extends Connector {
                 C instance = super.build();
                 instance.in = this.socket.getInputStream();
                 instance.out = this.socket.getOutputStream();
-                instance.reader = new BufferedReader(new InputStreamReader(instance.in));
-                instance.writer = new BufferedWriter(new OutputStreamWriter(instance.out));
+//                instance.reader = new BufferedReader(new InputStreamReader(instance.in));
+//                instance.writer = new BufferedWriter(new OutputStreamWriter(instance.out));
                 return instance;
             } catch (IOException e) {
                 throw e;

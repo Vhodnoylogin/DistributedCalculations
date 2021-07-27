@@ -1,7 +1,7 @@
 package run;
 
-import common.connection.channel.Connector;
-import common.connection.channel.message.MessageContainer;
+import common.connection.connector.Connector;
+import common.connection.message.MessageContainer;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,2 +1,6 @@
-# Project exclude paths
-/target/
+.idea/*
+dependency*.xml
+target/
+*.iml
+src/.idea/*
+/bin/

@@ -1,4 +1,4 @@
-package common.connection.channel.message;
+package common.connection.message;
 
 import common.help.Builder;
 
